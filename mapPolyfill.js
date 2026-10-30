@@ -12,3 +12,5 @@ Array.prototype.myMap = function(cb){
 
 const result = [2,3,4,5,6].myMap((num, i, arr)=>num*2);
 console.log(result);
+
+module.exports = myMap

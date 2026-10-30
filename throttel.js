@@ -1,6 +1,8 @@
 
 //Throtteling is a technique, it limits the excution of function, until specified time has passed
 
+const btn = document.getElementById("myButton")
+
 function throttel(cb, delay){
     let shouldWait = false;
     return function(...args){
@@ -16,10 +18,13 @@ function throttel(cb, delay){
 
 const throttelFun = throttel((value)=>{
     console.log("Throttel function is called", value)
-}, 300)
+}, 1000)
 
-throttelFun("React js");
-setTimeout(()=>{
-    throttelFun("Testing librab")
 
-}, 400)
+btn.addEventListener("click", () => {
+    throttelFun(Date.now());
+});
+
+
+
+
